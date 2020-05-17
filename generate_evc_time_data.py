@@ -122,11 +122,12 @@ class TimeValueGenerator:
         :param number_of_values: Integer value for number of elements in power value list
         :return: List of values between 7200 - 22000 with emphasis on 7200
         """
-        power_draws = [7200, 11000, 22000, 7200, 7200]
+        power_draws = [randrange(7200,22000), randrange(7200,22000), 
+                       randrange(7200,22000), randrange(7200,22000)]
         power_values = [int] * self.number_of_values * 5
 
         for i in range(len(power_values)):
-            rand_int = randrange(5)
+            rand_int = randrange(len(power_draws))
             power_values[i] = power_draws[rand_int]
 
         return power_values
